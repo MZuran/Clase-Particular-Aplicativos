@@ -64,29 +64,7 @@ const estudiantes = [
     { nombre: <nombre del alumno>, promedio: <promedio del alumno> }
 
     Acordate que el promedio de notas de un alumno se calcula sumando todas las notas y dividiendo su suma por la cantidad
-
-    Este ejercicio se puede hacer de MUCHAS formas, una forma de hacerlo, es la siguiente:
 */
-
-    function sumaDeNotas(alumno) {
-
-        let sumaTotal = 0
-
-        // Acordate que "elemento" se puede llamar de cualquier forma. Le podrías poner "nota" para claridad.
-
-        alumno.notas.forEach(
-            elemento => sumaTotal = sumaTotal + elemento
-        )
-
-    }
-
-    estudiantesMapeados = estudiantes.map(
-
-        // Tenés que calcular el promedio cambiando el valor del promedio. Acá sólo te da la suma de notas.
-
-        elemento => ({ nombre: elemento.nombre,  promedio: sumaDeNotas(elemento) })
-
-    )
 
  
 //  Muestra por consola quién tiene el promedio más alto. Usa array.forEach.

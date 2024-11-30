@@ -145,20 +145,30 @@ const estudiantes = [
     </p>
     <pre><code>
 function sumaDeNotas(estudiante) {
-    return estudiante.notas.reduce((suma, nota) => suma + nota, 0);
+    let sumaTotal = 0;
+    estudiante.notas.forEach(
+        elemento => sumaTotal = sumaTotal + elemento
+    );
+    return sumaTotal;
 }
 
-const estudiantesMapeados = estudiantes.map(estudiante => {
-    const suma = sumaDeNotas(estudiante);
-    return { nombre: estudiante.nombre, promedio: suma / estudiante.notas.length };
-});
+// Acordarse que en el mapeo, el parámetro puede tener cualquier nombre
+// Generalmente le ponemos "elemento", pero aquí se llama "estudiante"
+
+const estudiantesMapeados = estudiantes.map(
+    estudiante => ({ nombre: estudiante.nombre, promedio: sumaDeNotas(estudiante) / estudiante.notas.length })
+);
     </code></pre>
 
     <h3>Ejercicio 2: Usando <code>forEach y If</code></h3>
     <p>
-      Muestra en consola quien tiene el promedio más alto de los <code>estudiantesMapeados</code>. <br/>
-      Un consejo para empezar es declarar una variable <code>let notaMasAlta = 0</code> y en el forEach <b>comparar</b> usando los operadores de comparacion. <br/>
-      Si el promedio del elemento actual es mayor a la nota más alta, entonces la nota más alta se vuelve el promedio actual.
+      Muestra en consola quien tiene el promedio más alto de los
+      <code>estudiantesMapeados</code>. <br />
+      Un consejo para empezar es declarar una variable
+      <code>let notaMasAlta = 0</code> y en el forEach <b>comparar</b> usando
+      los operadores de comparacion. <br />
+      Si el promedio del elemento actual es mayor a la nota más alta, entonces
+      la nota más alta se vuelve el promedio actual.
     </p>
 
     <hr />
@@ -176,10 +186,12 @@ const arrayMetodos = [
 ];
     </code></pre>
     <p>
-        Proba ejecutando <code>arrayMetodos[0].presentarse()</code> y
-        <code>arrayMetodos[1].presentarse()</code> para observar las diferencias. <br/>
-        ¿Que muestra la consola si cambias el console log de pepe para que sólo diga <code>console.log(this)</code>?
-      </p>
+      Proba ejecutando <code>arrayMetodos[0].presentarse()</code> y
+      <code>arrayMetodos[1].presentarse()</code> para observar las diferencias.
+      <br />
+      ¿Que muestra la consola si cambias el console log de pepe para que sólo
+      diga <code>console.log(this)</code>?
+    </p>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
