@@ -180,8 +180,8 @@ const estudiantesMapeados = estudiantes.map(
     </p>
     <pre><code>
 const arrayMetodos = [
-    { nombre: "Pepe", presentarse: function() { console.log(this.nombre); } },   // Función Declarada
-    { nombre: "Pedro", presentarse: () => { console.log(this.nombre); } }        // Función Flecha
+    { nombre: "Pepe", presentarse: function() { console.log(this.nombre); } },   // Función Declarada (La palabra clave "this" funciona)
+    { nombre: "Pedro", presentarse: () => { console.log(this.nombre); } }        // Función Flecha    (La palabra clave "this" no funciona)
 ];
     </code></pre>
     <p>
