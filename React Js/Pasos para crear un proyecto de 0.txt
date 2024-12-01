@@ -28,4 +28,5 @@ El root del endpoint de la carpeta será el archivo con nombre de "index.js" mie
 6) Para levantar el proyecto, abrir LA CARPETA CREADA en vscode 
 
 	terminal > nueva terminal
+	ejecutar "npm i" o "npm install" (hacen lo mismo)
 	y ejecutar "npm run dev" sin las comillas
