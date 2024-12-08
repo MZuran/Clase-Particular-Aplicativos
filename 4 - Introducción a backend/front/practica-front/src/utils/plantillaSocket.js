@@ -1,11 +1,6 @@
-// Esto para importar
-import { io } from "socket.io-client"
-
-// Usa SÓLO UNO DE ESTOS POR PAGINA, pasale por prop el socket a quienes lo necesiten
-
-//const socket = io(url)
-
-// Esto para recibir emits
+/*
+    Cómo usar el socket dentro de un
+*/
 
 useEffect(() => {
     socket.on("newMessage", (data) => {
