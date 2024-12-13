@@ -8,6 +8,11 @@ console.log("Mostra los resultados por acá")
 console.log("El array de personas del ejercicio 1 es", personas)
 /* --------------------------- EJERCICIO 2 --------------------------- */
 
+productos.forEach(
+    (elemento) => {
+        console.log(elemento.nombre + " tiene un descuento de " + elemento.precio * elemento.descuento())
+    }
+)
 
 /* --------------------------- EJERCICIO 3 --------------------------- */
 
