@@ -1,4 +1,4 @@
-// Paquetes instalados: -g nodemon, express, body-parser, mysql2, socket.io
+// Paquetes instalados: -g nodemon, express, body-parser, socket.io
 // Agregado al archivo "package.json" la línea --> "start": "nodemon index"
 
 // Proyecto "Node_base"
@@ -11,10 +11,13 @@
 // Cargo librerías instaladas y necesarias
 const express = require('express');						// Para el manejo del web server
 const bodyParser = require('body-parser'); 				// Para el manejo de los strings JSON
-const MySQL = require('./modulos/mysql');				// Añado el archivo mysql.js presente en la carpeta módulos
 const session = require('express-session');				// Para el manejo de las variables de sesión
+const cors = require('cors');
 
-const app = express();									// Inicializo express para el manejo de las peticiones
+
+const app = express();                                  // Inicializo express para el manejo de las peticiones
+
+app.use(cors());            							// Inicializo express para el manejo de las peticiones
 
 app.use(bodyParser.urlencoded({ extended: false }));	// Inicializo el parser JSON
 app.use(bodyParser.json());
@@ -28,7 +31,8 @@ const server = app.listen(LISTEN_PORT, () => {
 const io = require('socket.io')(server, {
 	cors: {
 		// IMPORTANTE: REVISAR PUERTO DEL FRONTEND
-		origin: "http://localhost:3000",            	// Permitir el origen localhost:3000
+		//origin: ['http://localhost:3000',"http://localhost:3001"],            	// Permitir el origen localhost:3000
+		origin: "*",
 		methods: ["GET", "POST", "PUT", "DELETE"],  	// Métodos permitidos
 		credentials: true                           	// Habilitar el envío de cookies
 	}
@@ -56,7 +60,6 @@ io.use((socket, next) => {
 // A PARTIR DE ESTE PUNTO GENERAREMOS NUESTRO CÓDIGO (PARA RECIBIR PETICIONES, MANEJO DB, ETC.)
 // A PARTIR DE ESTE PUNTO GENERAREMOS NUESTRO CÓDIGO (PARA RECIBIR PETICIONES, MANEJO DB, ETC.)
 // A PARTIR DE ESTE PUNTO GENERAREMOS NUESTRO CÓDIGO (PARA RECIBIR PETICIONES, MANEJO DB, ETC.)
-
 app.get('/mensaje', (req, res) => {
     res.send('Hola, este es un mensaje desde el servidor');
 });
@@ -106,4 +109,10 @@ io.on("connection", (socket) => {
 		console.log("El socket ahora está en la room:", req.session.room)
 	});
 
+});
+
+app.get('/usuarios', async (req, res) => {
+	const query = "SELECT * FROM usuarios";
+	const resultados = await realizarQuery(query);
+	res.json(resultados);
 });
