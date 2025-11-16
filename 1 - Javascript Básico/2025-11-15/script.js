@@ -102,3 +102,13 @@ const arrayComplicado = [
 ]
 
 const letras = ["a", "b", "c"]
+
+const cocinar = ( elementoCrudo ) => { return  }
+
+const arrayNumeros = [1,2,3,4]
+
+arrayNumeros.map(numero => numero * 2) == [duplicar(1),duplicar(2),duplicar(3),duplicar(4)]
+
+arrayNumeros.map(numero => numero * 2) == [2,4,6,8]
+
+
