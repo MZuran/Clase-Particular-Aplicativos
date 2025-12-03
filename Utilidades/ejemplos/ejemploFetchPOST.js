@@ -1,31 +1,24 @@
-/*
-    El app.post del backend se comporta igual que el put y el delete
-*/
+// POST es el método que usamos para enviar información
+// Generalmente metemos las peticiones HTTP de un callback o buttonhandler
 
-const customFetch = async () => {
-    const url = "http://localhost:4000"
-    const urlFetch = url + "/api/page/3"
-    const metodo = "POST" // puede ser "GET", "POST", etc
-    const reqBody = { nombre: "Juan", edad: 30 }; // Modificar
+// Recordar que se debe modificar el url y incluso es posible que se necesite hacer una query
+// como por ejemplo /estudiantes?nombre=Ramiro&apellido=Molina
 
-    try {
-        const response = await fetch(urlFetch, {
-            method: metodo,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(reqBody),
-        });
+const body = {}; // Este es el objeto que enviamos dentro del body.
 
-        const responseData = await response.json();
+fetch('http://localhost:3001/estudiantes', {
+    method: 'POST', //  Cambiar por PUT, o DELETE si es necesario
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+})
 
-        /*
-            ************************************ A PARTIR DE ACÁ HASTA EL CATCH PROGRAMAR ************************************
-        */
+    .then(response => response.json())
+    .then(data => {
 
-        console.log('Respuesta del servidor:', responseData);
+        console.log(data)
+        // Acá adentro hacemos lo que querramos con lo que nos llega del POST
+        // Se puede por ejemplo usar el setter de una variable de estado
 
-    } catch (error) { console.error('Hubo un error en la solicitud:', error); }
-}
-
-customFetch()
+    });

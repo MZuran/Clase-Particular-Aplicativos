@@ -11,7 +11,6 @@ export default function TextInputComponent() {
 
     function buttonHandler() {
         /* Acá iría un socket.emit o un fetch de tipo POST, GET, etc */
-        /* Si se usa un socket acá adentro entonces ese se debería recibir por prop */
         console.log(mensajeEscritoEnInput)
     }
 

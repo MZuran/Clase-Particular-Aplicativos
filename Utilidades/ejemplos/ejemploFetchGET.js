@@ -1,25 +1,14 @@
-const customFetch = async () => {
-    const url = "http://localhost:4000"
-    const urlFetch = url + "/api/page/3"
-    const metodo = "GET" // puede ser "GET", "POST", etc
+// GET es el método por defecto, no es necesario especificar el tipo de método
+// Generalmente metemos las peticiones HTTP de un callback o buttonhandler
 
-    try {
-        const response = await fetch(urlFetch, {
-            method: metodo,
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        });
+// Recordar que se debe modificar el url y incluso es posible que se necesite hacer una query
+// como por ejemplo /estudiantes?nombre=Ramiro&apellido=Molina
 
-        const responseData = await response.json();
+fetch('http://localhost:3001/estudiantes')
+    .then(response => response.json())
+    .then((data) => {
 
-        /*
-            ************************************ A PARTIR DE ACÁ HASTA EL CATCH PROGRAMAR ************************************
-        */
+        // Acá adentro hacemos lo que querramos con lo que nos llega del GET
+        console.log(data)
 
-        console.log('Respuesta del servidor:', responseData);
-
-    } catch (error) { console.error('Hubo un error en la solicitud:', error); }
-}
-
-customFetch()
+    })

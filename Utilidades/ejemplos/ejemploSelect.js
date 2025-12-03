@@ -11,7 +11,6 @@ export default function SelectComponent() {
 
     function buttonHandler() {
         /* Acá iría un socket.emit o un fetch de tipo POST, GET, etc */
-        /* Si se usa un socket acá adentro entonces ese se debería recibir por prop */
         console.log(opcionSeleccionada);
 
         if (opcionSeleccionadaValor != "") {
@@ -21,7 +20,7 @@ export default function SelectComponent() {
 
     /*
         Si queremos generar opciones en base a lo que conseguimos de un backend, entonces deberemos usar
-        un array.map y recibir el array por prop
+        un array.map y mapearlo tal que se generen un array de <option value={valor} key={id}>{texto}</option>
     */
 
     return (
