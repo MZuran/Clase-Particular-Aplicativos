@@ -2,10 +2,12 @@
 
 import React from 'react'
 import { useSocket } from '@/hooks/useSocket'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 function Pagina() {
     const { socket, isConnected } = useSocket()
+
+    const [arrayMensajes, setArrayMensajes] = useState([])
 
     useEffect(
         () => {
@@ -14,8 +16,11 @@ function Pagina() {
 
             // A partir de acá metemos nuestras suscripciones con socket.on()
 
-            socket.on("nuevo_mensaje", (mensajes) => {
-                console.log("Se recibieron mensajes nuevos!", mensajes)
+            socket.on("nuevo_mensaje", (mensaje) => {
+                console.log("Se recibió un mensaje nuevo!", mensaje)
+
+                setArrayMensajes( prevArray => [...prevArray, mensaje] )
+                // Debemos hacer esto si queremos ir expandiendo un array
             })
 
         },
