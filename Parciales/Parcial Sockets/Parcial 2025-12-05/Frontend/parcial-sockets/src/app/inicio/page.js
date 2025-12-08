@@ -4,6 +4,7 @@ import React from 'react'
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { Tarea } from '@/components/Tarea'
 
 function Page() {
 
@@ -29,6 +30,7 @@ function Page() {
             <h1>Inicio</h1>
 
             <p>La variable de estado es {username}</p>
+            <p>El largo del texto es: {username.length}/200</p>
 
             <input
                 type={"text"}
@@ -45,6 +47,8 @@ function Page() {
             {
                 username.length < 3 && <p>Error: El nombre de usuario tiene menos de 3 caracteres</p>
             }
+
+            <Tarea contador={username.length} />
 
         </div>
     )

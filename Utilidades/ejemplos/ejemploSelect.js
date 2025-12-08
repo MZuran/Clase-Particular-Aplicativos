@@ -25,6 +25,7 @@ export default function SelectComponent() {
 
     return (
         <div>
+            
             <select value={opcionSeleccionada} onChange={handleSelectChange}>
                 <option value="">Selecciona una opción</option>
                 <option value="opcion1">Opción 1</option>

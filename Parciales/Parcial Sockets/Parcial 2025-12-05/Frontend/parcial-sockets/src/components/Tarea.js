@@ -11,17 +11,20 @@ export function Tarea(props) {
     // props.texto
     // props.prioridad
     // props.creador
+    // props.contador
 
     return (
         <>
             <hr />
-            <h4>componente Tarea</h4>
 
             { props.prioridad > 3 && <p>Prioridad Alta</p> }
             { props.prioridad <= 3 && <p>Prioridad Normal</p> }
 
+            { /* props.prioridad > 3 ? <p>Prioridad Alta</p> : <p>Prioridad Normal</p> */ }
+
             <p>Creador: {props.creador}</p>
             <p>Texto: {props.texto}</p>
+            <p>El contador es: {props.contador}</p>
 
         </>
     )
