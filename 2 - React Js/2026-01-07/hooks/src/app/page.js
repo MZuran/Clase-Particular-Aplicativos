@@ -21,6 +21,7 @@ export default function Home() {
       <button onClick={ () => { router.push("/ejemplos/useState") } } >Ejemplo useState</button>
       <button onClick={ () => { router.push("/ejemplos/useEffect") } } >Ejemplo useEffect</button>
       <button onClick={ () => { router.push("/ejemplos/conditionalRendering") } } >Ejemplo conditional rendering</button>
+      <button onClick={ () => { router.push("/ejemplos/Mapeo") } } >Ejemplo mapeo</button>
       <button onClick={ funcionIrAUseSearchParams } >Ejemplo useSearchParams</button>
     </div>
   );
