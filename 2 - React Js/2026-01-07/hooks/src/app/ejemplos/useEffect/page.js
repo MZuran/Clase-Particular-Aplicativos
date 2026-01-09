@@ -16,7 +16,9 @@ import { useState, useEffect } from 'react'
         2)  Si el valor de alguna dependencia cambia
 
     El useEffect tiene 2 usos principales:
-        1) Si nosotros queremos que algo suceda UNA SÓLA VEZ, debemos usar el useEffect con dependencias vacías
+        1) Si nosotros queremos que algo suceda UNA SÓLA VEZ (cuando se carga)
+           por primera vez, debemos usar el useEffect con dependencias vacías
+           
         2) Si nosotros queremos "vigilar el valor de una variable", generalmente lo hacemos con useEffect
 */
 
