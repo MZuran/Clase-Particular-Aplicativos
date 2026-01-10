@@ -16,7 +16,9 @@ function Tareas() {
     const [textoTarea, setTextoTarea] = useState("")
     const [prioridadTarea, setPrioridadTarea] = useState(1)
 
-    const [tareaActual, setTareaActual] = useState(false)
+    const [tareaActual, setTareaActual] = useState({})
+    const [conexionExitosa, setConexionExitosa] = useState(false)
+    const [historial, setHistorial] = useState([])
 
     useEffect(
         () => {
@@ -26,15 +28,25 @@ function Tareas() {
             // Meter suscrupciones acá abajo
             socket.on("joined_OK_tareas", () => {
                 console.log("Te uniste a la sala correctamente")
+                setConexionExitosa(true)
             })
 
             socket.on("nueva_tarea", (data) => {
                 console.log("Llegó una nueva tarea", data)
+
                 setTareaActual(data)
+
+                // historial.push(data) 
+                // ¿Cómo hacemos que esto funcione con variables de estado?
+                setHistorial(prev => [...prev, data])
             })
 
             socket.on("tareas_completas", () => {
+                console.log("Se completaron las tareas")
 
+                setTareaActual({})
+                setConexionExitosa(false)
+                setHistorial([])
             })
 
         },
@@ -42,15 +54,15 @@ function Tareas() {
     )
 
     function callbackBoton() {
-        if ( prioridadTarea >= 1 && prioridadTarea <= 5 ) {
+        if (prioridadTarea >= 1 && prioridadTarea <= 5) {
 
-            socket.emit("crear_tarea", { 
-                creador: searchParams.get("username"), 
-                texto: textoTarea, 
+            socket.emit("crear_tarea", {
+                creador: searchParams.get("username"),
+                texto: textoTarea,
                 prioridad: prioridadTarea
             })
 
-        }   else    {
+        } else {
             alert("Error: La prioridad debe estar entre 1 y 5")
         }
     }
@@ -63,23 +75,54 @@ function Tareas() {
                 El alumnoId es: {searchParams.get("alumnoId")}
             </p>
 
+            {conexionExitosa && <p>Numero de sala: {searchParams.get("alumnoId")}</p>}
+
             <button
                 onClick={() => { socket.emit("join_tareas", { alumnoId: searchParams.get("alumnoId") }) }}
             >Unirse a la sala de Tareas</button>
 
             <hr />
 
-            <NuevaTarea
-                onChangeTarea={(e) => { setTextoTarea(e.target.value) }}
-                onChangePrioridad={(e) => { setPrioridadTarea(e.target.value) }}
-                onClickCrearTarea={callbackBoton}
-            />
+            {conexionExitosa &&
+                <NuevaTarea
+                    onChangeTarea={(e) => { setTextoTarea(e.target.value) }}
+                    onChangePrioridad={(e) => { setPrioridadTarea(e.target.value) }}
+                    onClickCrearTarea={callbackBoton}
+                />
+            }
 
-            <Tarea
-                texto={tareaActual.texto}
-                prioridad={tareaActual.prioridad}
-                creador={tareaActual.creador}
-            />
+            {
+                tareaActual.texto ?
+                    <Tarea
+                        texto={tareaActual.texto}
+                        prioridad={tareaActual.prioridad}
+                        creador={tareaActual.creador}
+                    /> :
+                    <p>Se completaron todas las tareas. Apreta el botón para unirte de nuevo.</p>
+            }
+
+            <h4>Historial</h4>
+
+
+            {/* 
+                [{...},{...},{...},{...},{...}]
+                [<Tarea/>,<Tarea/>,<Tarea/>,<Tarea/>,<Tarea/>]
+            */}
+
+            {
+                historial.map(
+                    (objetoTarea) => {
+                        return <Tarea
+                            texto={objetoTarea.texto}
+                            prioridad={objetoTarea.prioridad}
+                            creador={objetoTarea.creador}
+                            key={objetoTarea.id}
+                        />
+                    }
+                )
+            }
+
+            { historial.length == 0 && <p>No hay tareas creadas</p> }
 
         </div>
     )
