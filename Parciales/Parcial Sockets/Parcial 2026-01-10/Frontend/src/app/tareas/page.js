@@ -54,6 +54,7 @@ function Tareas() {
     )
 
     function callbackBoton() {
+
         if (prioridadTarea >= 1 && prioridadTarea <= 5) {
 
             socket.emit("crear_tarea", {
@@ -65,6 +66,7 @@ function Tareas() {
         } else {
             alert("Error: La prioridad debe estar entre 1 y 5")
         }
+        
     }
 
     return (
