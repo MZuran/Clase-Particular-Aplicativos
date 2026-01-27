@@ -1,0 +1,49 @@
+.next/
+node_modules/
+
+    Contienen información de nuestro proyecto y es donde se almacenan las dependencias (paquetes) descargados.
+    Son carpetas de tamaño gigantezco por lo que NO se suelen subir a repositorios o entregas.
+
+    Estas carpetas son creadas automáticamente en el proyecto cada vez que corremos el comando:
+
+        npm i 
+        npm install
+
+    (Para que funcionen los comandos, debe estar presente el archivo package.json)
+
+public/
+
+    Acá se guardan los archivos multimedia que querramos usar en nuestro proyecto.
+    (Fotos, videos, GIFS, audios, fuentes tipográficas, logos, etc)
+
+src/
+
+    Contiene el 99% del código de la aplicación.
+    Si queremos agregar archivos de código en nuestra aplicación, CASI siempre va a ser acá adentro.
+
+src/app/
+
+    Contiene los componentes PÁGINA de react y también los layouts.
+    Según la estructura de archivos de esta carpeta, podemos armar los distintos urls de nuestra aplicación.
+
+    La carpeta app debe seguir ciertas reglas:
+
+    1)  Sólo puede existir un sólo page.js por subcarpeta
+    2)  Sólo puede existir un sólo layout.js por subcarpeta
+    3)  Las subcarpetas de la carpeta app son los nombres de las nuevas direcciones de URL
+
+src/componts/
+
+    Contiene los componentes COMUNES de react.
+
+.gitignore
+
+    Es un archivo para configurar cuáles directorios ignorar (o no subir) al repositorio de github.
+    Generalmente sirve para NO SUBIR .next y node_modules
+
+package.json
+
+    json
+    Java-Script-Object-Notation
+
+    Es un archivo que tiene información acerca de la aplicación y las dependencias.

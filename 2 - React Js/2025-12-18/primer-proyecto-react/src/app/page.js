@@ -2,7 +2,6 @@
 
 export default function Home() {
 
-
   const x = 34
 
   return (
