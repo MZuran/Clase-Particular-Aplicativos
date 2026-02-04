@@ -63,8 +63,8 @@ io.use((socket, next) => {
 
 const dbConfig = {
     host: 'localhost',
-    user: 'root',
-    password: 'Siemens21..14',
+    user: '????',
+    password: '????',
     database: '2024-5INF-Examenes'
 };
 
