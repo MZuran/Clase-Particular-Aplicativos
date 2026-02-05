@@ -1,0 +1,20 @@
+Props   -   Son los parámetros que reciben los componentes.
+            Se envían mediante el objeto "props" o el objeto anónimo { }
+
+Hooks   -   Un hook es una "función especial" que importamos desde algún otro archivo que nos da acceso
+            al uso de nuevas herramientas.
+
+            Por ejemplo, usar el estado, usar los efectos, usar el gps, efectos
+
+Estado  -   Se refiere a "La memoria interna del componente"
+            Si queríamos usar el estado, debíamos usar useState.
+
+            Cuando el estado cambia, el componte se "vuelve a dibujar" (re-renderiza)
+
+Evento  -   Es algo que podemos detectar.
+            Por ejemplo, el click del usuario en un componente (llamado onClick)
+
+Efecto  -   Es la consecuencia que se ejecuta luego de detectar un evento.
+            onClick={sumarUno}
+
+            En este caso, el evento es el click y la consecuencia es ejecutar sumarUno

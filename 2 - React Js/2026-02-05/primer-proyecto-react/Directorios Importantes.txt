@@ -1,0 +1,40 @@
+.next/
+node_modules/
+
+    Estas dos carpetas se pueden volver a crear automáticamente utilizando el comando
+    npm i
+    npm install
+
+    Almacenan en su interior todos los paquetes de node descargados del proyecto.
+
+public/
+
+    Es la carpeta en donde guardamos todos los archivos multimedia del proyecto.
+    Imagenes, audios, fuentes tipográficas, íconos, etc
+
+src/
+
+    Es la carpeta en donde guardamos todo el código del programa.
+
+src/app/
+
+    Es la carpeta en donde guardamos los "componentes página"
+    Además aquí se guardan los archivos de layout.
+
+src/components/
+
+    Es la carpeta en donde guardamos los "componentes comunes"
+
+src/hooks/
+
+    Es la carpeta en donde guardamos los hooks personalizados.
+    Es donde guardamos el archivo useSocket.js
+
+package.json
+
+    Java Script Object Notation
+    Guarda información importante acerca del proyecto. Se destacan los paquetes instalados (dependencias)
+    y también los scripts configurados.
+
+    Los scripts son "atajos" de comandos que podemos utilizar con el comando
+    npm run <nombre>

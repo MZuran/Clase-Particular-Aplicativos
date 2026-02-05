@@ -41,7 +41,7 @@
         ></SegundoComponente>
 */
 
-export function PrimerComponente(props) {
+export function PrimerComponente( props ) {
 
     // props.nombre
     // props.apellido

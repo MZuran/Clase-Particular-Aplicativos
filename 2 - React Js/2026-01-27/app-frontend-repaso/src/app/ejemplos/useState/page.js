@@ -8,10 +8,8 @@ export default function UseState() {
     let contadorComun = 0
 
     function sumarUno() {
-
         contadorComun = contadorComun + 1
         setContador(contador + 1)
-
     }
 
     function restarUno() {

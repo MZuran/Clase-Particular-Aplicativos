@@ -11,23 +11,20 @@ export default function EjemploUseEffect() {
 
     useEffect(
         () => {
-
             if (Y == 5) {
                 alert("Y vale 5")
             }
-
         },
+        
         [Y]
     )
 
     useEffect(
-        () => {
-
-            console.log("Esto sólo se ejecuta una vez")
-
-        },
+        () => { console.log("Esto sólo se ejecuta una vez") },
         []
     )
+
+    console.log("Cambio el estado")
 
     return (
         <>
