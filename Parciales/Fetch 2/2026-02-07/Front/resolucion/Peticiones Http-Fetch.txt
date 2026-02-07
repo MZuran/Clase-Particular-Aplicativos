@@ -1,0 +1,22 @@
+El protocolo HTTP es un sistema de enviar información que siempre tiene el siguiente flujo:
+
+    1)  El usuario envía una petición.
+    2)  El backend recibe una petición y ejecuta cierta lógica.
+    3)  El backend envía una "respuesta" al usuario.
+    4)  La conexión termina.
+
+El usuario le va a enviar información al backend mediante un objeto llamado "body"
+
+GET     -   Se utiliza para "leer" información.
+            El usuario que hace un GET, NO le envía un body al backend.
+
+            Cada vez que abrimos una página en internet, estamos haciendo un GET.
+
+POST    -   Se utiliza cuando el usuario quiere que el backend "suba" información a la base de datos.
+            El usuario envía la información mediante body.
+
+PUT     -   Se utiliza cuando el usuario quiere "modificar" información guardada en la base de datos.
+            La información acerca de que cosa "modificar" y cómo modificarlo se pasa por el body.
+
+DELETE  -   Se utiliza cuando el usuario quiere "borrar" información guardada en la base de datos.
+            La información acerca de que cosa "borrar" está en el body.
