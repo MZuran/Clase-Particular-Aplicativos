@@ -1,0 +1,49 @@
+.next/
+node_modules/
+
+    Guardan información acerca de nuestro proyecto en general.
+    node_modules almacena todos los paquetes que tenemos instalados en nuestro proyecto.
+
+    En caso de ser eliminadas, estas carpetas pueden ser recreadas con el comando
+
+    npm i
+    npm install
+
+public/
+
+    La carpeta en donde se guardan los archivos multimedia.
+    (Videos, Imagenes, logos, fuentes tipográficas, archivos de audio, etc)
+
+src/
+    
+    Es la carpeta en donde guardamos todos nuestros archivos de código.
+    Tiene varias subcarpetas.
+
+src/app/
+
+    Es la carpeta en donde se guardan todos los "componentes página"
+
+src/components/
+
+    Es la carpeta en donde se guardan todos los "componentes comunes"
+
+src/hooks/
+
+    Es la carpeta en donde se almacenan los "hooks personalizados"
+    En el caso de la materia, su único uso es almacenar useSocket.js
+
+src/utils/
+
+    Es la carpeta en donde se guarda cualquier cosa que no se guarde en las otras carpetas.
+    Se puede pensar como una carpeta "miscelánea" o "de utilidades"
+
+package.json
+
+    Java Script Object Notation
+    Es el archivo en donde se guarda información de nuestras dependencias y scripts.
+    Las "dependencias" son los paquetes que necesitamos en nuestro proyecto.
+    Los "scripts" son los comandos que podemos usar para inicializar nuestro programa.
+
+    package.json es el archivo que nos dice cómo crear node_modules en caso de ser borrado.
+
+    npm run ...     -       Es el comando que ejecuta algún script
