@@ -176,4 +176,9 @@ io.on("connection", (socket) => {
 	socket.on("disconnect", () => {
 		console.log("Cliente desconectado:", socket.id);
 	});
+
+	socket.on("enviarMensajeBack", (data) => {
+		console.log("Se recibió el mensaje", data.mensaje)
+		socket.emit("enviarMensajeFront", { mensaje: "Hola soy el back", mensajeOriginal: data.mensaje } )
+	})
 });

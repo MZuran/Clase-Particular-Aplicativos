@@ -1,0 +1,7 @@
+Evento  -   Es "algo" que podemos detectar. Suele estar asociado a un efecto.
+
+Efecto  -   Suele ser un callback que se ejecuta como consecuencia de la detección de un evento.
+
+onClick={ () => {} }
+
+onChange={ (e)=>{ e.target.value } }
