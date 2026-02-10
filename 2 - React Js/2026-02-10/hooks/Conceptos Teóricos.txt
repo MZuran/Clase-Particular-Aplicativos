@@ -1,0 +1,36 @@
+"use client"        -   Es un string que ponemos al principio siempre que usemos hooks
+                        o algún componente de complejidad media o superior.
+
+                        Hace que el cliente gaste sus propios recursos electrónicos para
+                        renderizar la aplicación.
+
+Hook                -   Un hook es una FUNCIÓN importada desde un paquete de node u otro archivo
+                        que nos da acceso a nuevas características del navegador o dispositivo.
+
+Estado              -   Es "la memoria interna del componente".
+
+                        Cada vez que cualquier parte del estado cambia, el componente se 
+                        "re-renderiza". Se vuelve a ejecutar.
+
+Variables de Estado -   Es una variable que está dentro del estado.
+                        Una variable "dentro de la memoria interna del componente"
+
+useState            -   Es un hook que nos permite utilizar el estado.
+
+Evento              -   Es una acción o ocurrencia que nuestro programa puede detectar.
+
+Efecto              -   Es "algo que pasa" como consecuencia de un evento.
+                        Suelen ser un callback.
+
+useEffect           -   Es un hook que nos permite controlar la ejecución de un Efecto
+                        de forma precisa.
+
+useRouter           -   Es un hook que nos permite controlar la ruta actual del usuario.
+
+SearchParams        -   Es una forma de escribir un objeto de javascript sobre un URL.
+                        Para escribir searchParams, se sigue la siguiente sintaxis:
+
+                        1)  Se escribe el signo de pregunta ?
+                        2)  Se escriben pares de clave=valor separados por &
+
+useSearchParams     -   Es un hook que nos permite utilizar searchParams en nuestra aplicación
