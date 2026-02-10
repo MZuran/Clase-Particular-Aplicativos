@@ -76,7 +76,7 @@ export default function Home() {
                 onChange={(e) => { setEquipoInput(e.target.value) }}
             ></input>
 
-            <button onClick={ onClickCambiarEquipo } >Cambiar equipo</button>
+            <button onClick={onClickCambiarEquipo} >Cambiar equipo</button>
 
         </div>
     );
