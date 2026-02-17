@@ -181,4 +181,10 @@ io.on("connection", (socket) => {
 		console.log("Se recibió el mensaje", data.mensaje)
 		socket.emit("enviarMensajeFront", { mensaje: "Hola soy el back", mensajeOriginal: data.mensaje } )
 	})
+
+	socket.on("ping", () => {
+		console.log("Me hicieron un ping")
+
+		socket.emit("pingBackend")
+	})
 });
