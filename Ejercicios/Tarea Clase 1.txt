@@ -1,0 +1,88 @@
+Preguntas Teóricas - Clase 1
+
+TEMA VARIABLES
+
+1)	¿Qué es una variable y qué es un dato?
+	¿Cómo se relaciona un concepto con el otro?
+
+2)	¿Qué es una condición?
+	¿Cómo se relaciona una condición con el concepto de Truthys y Falsys?
+
+TEMA CONDICIONALES
+
+1)	¿Qué es y cuáles son los operadores condicionales?
+	¿Cuál es la diferencia entre un operador lógico con uno aritmético?
+	
+2)	Sintaxis de la cláusula "for" 
+	( inicialización, condición, actualización )
+
+	a-Explicar qué es la cláusula "for"
+	b-Explicar qué es la variable de control
+	c-Explicar qué es la inicialización 
+	d-Explicar qué es la condición (dentro del contexto del for)
+	e-Explicar qué es la actualización
+ 
+TEMA FUNCIONES
+
+1)	¿Qué es y cuáles son los elementos de una función?
+	Particularmente explicar los parámetros y el retorno.
+
+2)	¿Qué es la ejecución de una función?
+	¿Qué es la referencia de una función?
+	¿Cómo identifico uno u el otro?
+
+3)	¿Cómo es la sintaxis de la función declarada?
+	¿Cómo es la sintaxis de la función flecha?
+
+	Escribir un ejemplo de cada una.
+
+4)	¿Qué le debo concatenar a la referencia de una función para ejecutarla?
+
+5)	¿Cuál es la expresión mínima de la función flecha?
+
+TEMA OBJETOS
+
+1)	¿Qué es un objeto en javaScript?
+	¿Qué es un método?
+
+2)	¿Cuál es la expresión mínima de un objeto?
+	¿A qué nos referimos con clave y valor?
+
+3)	¿Qué le debo concatenar a un objeto para obtener un valor?
+
+4)	Escribir un ejemplo de objeto que contenga 4 claves
+	Entre ellas, debe haber 2 métodos: uno anónimo (función flecha) y otro por referencia de función
+
+TEMA ARRAYS
+
+1)	¿Qué es un array en javaScript?
+	¿Cómo guarda los datos?
+
+2)	¿Qué le debo concatenar a un array para obtener un valor?
+
+EJERCICIO INTEGRADOR
+
+1)	Copiar y pegar el siguiente array en la consola de chrome o en visual studio code
+
+const arrayComplicado = [ 1, 2, () => {}, [
+    "a", "b", ["c", "d"], () => { return {
+        seguir: {
+            seguirDeNuevo: () => { return (
+                () => { return {
+                    salida: ["llegaste"]
+                }}
+            )
+         }
+        }
+    } }
+] ]
+
+2)	A arrayComplicado, ir concatenando paréntesis, corchetes con posición o puntos con clave como sea necesario hasta llegar al string "llegaste".
+	Recomiendo hacerlo de a pasos, fijándose qué devuelve cada cosa.
+
+	Por ejemplo:
+	1-	console.log( arrayComplicado )
+	2-	console.log( arrayComplicado[3] )
+	3-	console.log( arrayComplicado[3][3] )
+	4-	console.log( arrayComplicado[3][3]() )
+	5-	etc
