@@ -1,0 +1,56 @@
+.next/
+node_modules/
+
+    Guardan información y metadata acerca del proyecto.
+    node_modules es donde se almacenan TODOS los paquetes instalados de node.
+
+    Es de lejos la carpeta MÁS PESADA DEL PROYECTO, por lo que no se debe subir a ningún
+    repositorio. Si entregamos un proyecto, NO DEBEMOS INCLUÍR node_modules (o .next)
+
+public/
+
+    Guarda contenido multimedia.
+    Los archivos multimedia son imágenes, audios, logos, fuentes tipográficas, videos, etc.
+
+src/
+
+    Guarda todos los archivos de código que vayamos a crear.
+    Tiene varias subcarpetas.
+
+src/app/
+
+        Guarda todos los archivos de COMPONENTES PÁGINA de la aplicación.
+        Su distribución de archivos y carpetas será la responsable de generar las url de la aplicación.
+
+src/components/
+
+        Guarda todos los archivos de COMPONENTES COMUNES de la aplicación.
+
+src/hooks/
+
+        Sólo lo vamos a usar para guardar el archivo useSocket.js cuando usemos sockets.
+
+src/utils/
+
+        Es una carpeta opcional que usamos para guardar archivos de código misceláneos.
+
+package.json
+
+    Java Script Object Notation
+    Contiene información acerca de la configuración de nuestro proyecto.
+
+    En sus características podemos ver el nombre del proyecto, su versión,
+    sus PAQUETES INSTALADOS (dependencias) y sus SCRIPTS.
+
+    Node va a utilizar el archivo package.json para CREAR la carpeta node_modules en 
+    el caso de haberla borrado. Node mira las dependencias de package.json y descarga
+    los paquetes correspondientes.
+
+    Para crear nuevamente la carpeta node_modules, corremos el comando:
+    npm i
+    npm install
+
+    Los scripts almacenados en package.json son "atajos" para ejecutar ciertos comandos.
+    Cuando queremos correr un script, lo hacemos de la forma:
+
+    npm run (nombre del script)
