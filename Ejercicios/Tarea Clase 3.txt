@@ -1,0 +1,11 @@
+1) Explicá en tus propias palabras cuál es la principal ventaja de utilizar react js en lugar de vanilla js (o sea el js común).
+
+2) ¿Qué es un componente de react js? ¿Cómo puedo crear uno?
+
+3) ¿Qué es un componente común (src/components/) y un componente página? (src/app/)
+
+4) ¿Qué es un prop de un componente?
+
+5) ¿Cómo funciona el sistema de la carpeta src/app/ al momento de querer hacer nuevos URLs?
+
+por ejemplo localhost3000/login

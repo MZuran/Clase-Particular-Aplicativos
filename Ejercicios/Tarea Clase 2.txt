@@ -1,0 +1,35 @@
+1) Explicá en tus propias palabras qué quiere decir que una función reciba un dato como parámetro y que quiere decir que devuelva un dato. (Consultar lista de tipos de datos de la clase pasada)
+
+2) Explicá en tus palabras qué es el largo (o length) de un array en js y cómo se accede a él.
+
+3) Explicá que hace, que recibe y que devuelve array.push
+
+4) Explicá que hace, que recibe y que devuelve array.pop
+
+5) ¿Qué es un callback?
+
+6) Explicá que hace, que recibe y que devuelve Array.forEach (Lo mismo para su Callback)
+
+7) Programá una función que utilice Array.forEach la cual recibe una lista de números y devuelve toda su suma
+
+	const listaEjemplo = [1,2,3,4]
+
+	function sumarTodo(lista) {
+	let sumatoria = 0
+	...
+	return sumatoria
+	}
+
+7) Explicá que hace, que recibe y que devuelve Array.map (Lo mismo para su Callback)
+
+8) ¿Por qué decimos que array.map "transforma" un array?
+
+9) Si yo mapeo un array de números, ¿Mi array original queda modificado?
+
+10) Hacé una función que reciba una lista de números y devuelva una nueva lista de números multiplicados por 5.
+
+11) Explicá que hace, que recibe y que devuelve Array.filter (Lo mismo para su Callback)
+
+10) Hacé una función que reciba una lista de números y devuelva una nueva lista que sólo contenga aquellos números menores a 0.
+
+11) Hacé el ejercicio integrador resuelto en clase por tu cuenta.
