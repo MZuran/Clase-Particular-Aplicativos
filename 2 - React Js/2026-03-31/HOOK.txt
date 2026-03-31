@@ -1,0 +1,141 @@
+HOOK:
+	Es una función dentro del paquete de react que nos permite utilizar nuevas características
+
+ESTADO:
+	La memoria interna de un componente
+	Si un dato dentro del estado de un componente cambia, el componente se reinicia
+
+VARIABLE DE ESTADO:
+	Es una variable almacenada dentro del estado (la memoria interna) de un componente
+
+HOOK USESTATE:
+	Es el hook que nos permite utilizar el estado de un componente.
+
+------------------------------------------------------------------------------------------------------
+
+ASIGNAR LÓGICA A UN BOTÓN:
+
+	Necesitamos:
+	1) Botón
+	2) Callback (Una función que se pasa por parámetro)
+
+	Para asociar el callback al botón, le debemos pasar un prop (parámetros de etiquetas) llamado onClick.
+	Recordar escribir "use client" en la primera línea del componente.
+
+	<button onClick={ callback } > Hola </button>
+
+------------------------------------------------------------------------------------------------------
+PASOS PARA USAR USESTATE
+
+	1) Asegurarse de tener el string "use client" arriba de todo
+
+	2) Importar el hook useState desde react
+		import { useState } from "react";
+
+	3) Dentro del componente, crear la variable de estado
+
+------------------------------------------------------------------------------------------------------
+
+EVENTOS:
+	Un evento es "algo" o "una acción" que un programa puede detectar.
+	Usualmente está asociado a un efecto.
+
+EFECTO:
+	La consecuencia de la detección de un evento.
+	Es "lo que sucede" después de que se detecte un evento.
+
+USEEFFECT:
+	Es un hook que nos permite ejecutar un efecto bajo unas condiciones personalizadas
+
+------------------------------------------------------------------------------------------------------
+PASOS PARA USAR USEEFFECT
+
+	1) Asegurarse de tener el string "use client" arriba del todo
+
+	2) Importar el hook useEffect desde react
+
+	3) Crear el efecto
+
+SINTAXIS
+	useEffect( 
+    		el efecto, 
+    		array de dependencias 
+	)
+	
+¿Qué es el efecto?
+  	Es la función que se va a ejecutar según configuremos el useState.
+  	Generalmente, se escribe como una función flecha
+
+¿Qué es el array de dependencias?
+  	Es un array que almacena 1 de 2 cosas:
+    		1.  Nada
+    		2.  Variables (dependencias)
+
+¿Cómo funciona el useEffect?
+
+El efecto se va a ejecutar cuando se cumplan 1 de 2 condiciones:
+
+	1) La página carga POR PRIMERA VEZ
+	2) El valor de alguna dependencia cambia
+
+SI QUEREMOS QUE ALGO SUCEDA UNA SÓLA VEZ, UTILIZAMOS USEEFFECT CON EL ARRAY DE DEPENDENCIAS VACÍO
+
+SI QUEREMOS "VIGILAR" EL VALOR DE UNA VARIABLE, TAMBIÉN USAMOS USEEFFECT
+
+------------------------------------------------------------------------------------------------------
+HOOK USEROUTER
+
+¿Qué es lo que hace el hook useRouter?
+Nos permite manipular la ruta del usuario y redirigirlo a otros lados
+
+PASOS PARA USAR USEROUTER
+
+	1) Asegurarse de tener el string "use client"
+
+	2) Importar useRouter desde "next/navigation" (o si no, no funciona)
+		import { useRouter } from "next/navigation";
+
+	3) Crear el objeto router con el hook useRouter
+		const router = useRouter()
+
+	4) Usar los métodos del objeto router ya sea en efectos de botones, useEffect, etc
+
+El objeto router tiene 4 métodos:
+
+	1) router.push(URL)
+
+		Redirige al usuario a la nueva dirección
+
+	2) router.forward()	-	Envía al usuario un espacio adelante en el historial de navegación
+	3) router.back()	-	Envía al usuario un espacio hacia atrás en el historial de navegación
+	4) router.refresh()	-	Refresca la página
+
+------------------------------------------------------------------------------------------------------
+SEARCH PARAMS
+
+Son un objeto que se escribe en el propio URL
+https://www.google.com/search
+
+¿Cómo sabe el navegador que estamos escribiendo search params?
+	Todos los search params van al final del url, y se indican con el carácter "?"
+
+¿Cuál es la sintaxis del objeto del URL?
+	Son duplas de clave=valor separadas por el carácter &
+
+Si nosotros queremos que nuestra aplicación utilice los search params, debemos usar el hook useSearchParams
+
+PASOS PARA USAR USESEARCHPARAMS
+
+	1) Asegurarse de tener el string "use client"
+
+	2) Importar useSearchParams desde "next/navigation"
+
+	3) Crear el objeto searchParams
+		const searchParams = useSearchParams()
+
+	4) Utilizar los métodos de searchParams
+
+searchParams.get(clave)
+	Devuelve el valor de la clave escrito en el url.
+	Si no está escrito, devuelve undefined.
+
