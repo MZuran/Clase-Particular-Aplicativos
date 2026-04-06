@@ -1,0 +1,59 @@
+.next/
+node_modules/
+
+    Almacena todos los paquetes descargados desde node.
+    Generalmente se borra o no se sube a github porque estas carpetas se pueden 
+    "volver a generar"
+
+    ¿Cómo genero node_modules en caso de no tenerlo?
+    Con el comando
+
+        npm i
+        npm install
+
+public/
+
+    Almacena todos los archivos multimedia que querramos usar en nuestra aplicación.
+    Imágenes, videos, audio, fuentes tipográficas, etc
+
+src/
+
+    Almacena todos los archivos de código que vayamos a escribir.
+    Se divide en varias subcarpetas.
+
+    src/app/
+
+        Almacena todos los "componentes página" de nuestra aplicación.
+        Sus directorios "hijos" van a cambiar los URL de nuestra aplicación.
+
+    src/components/
+
+        Almacena todos los "componentes comunes" de nuetra aplicación.
+
+    src/hooks/
+
+        Almacena el archivo useSocket.js cuando querramos usar sockets.
+
+    src/utils/
+
+        Almacena archivos misceláneos que no sean componentes.
+        Por ejemplo archivos que contengan funciones auxiliares:
+
+        sacarPromedio.js
+        convertirDatos.js
+
+package.json
+
+    Java Script Object Notation
+    Contiene información relevante de nuestro proeycto incluyendo los scripts y las dependencias.
+
+    ¿Qué son las dependencias?
+    Son los paquetes que tenemos instalados en nuestro proyecto.
+    La lista de dependencias importa porque el comando "npm i" mira los paquetes de esta lista
+    y genera la carpeta node_modules según lo que encuentre ahí.
+
+    ¿Qué son los scripts?
+    Son "atajos" o "abreviaciones" para correr ciertos comandos en el cmd.
+    Para correr un un script, utilizamos el comando:
+
+        npm run <nombre del script>
