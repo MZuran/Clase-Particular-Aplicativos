@@ -5,18 +5,20 @@
         1)
 
         { condicion && renderizado }
-        Si la condición es true, se muestra el renderizado
 
-        { edad >= 18 && <p>Persona Adulta</p> }
+        
+                Si la condición es true, se muestra el renderizado
+
+                { edad >= 18 && <p>Persona Adulta</p> }
 
         2)
 
         { condicion ? renderizadoTrue : renderizadoFalse }
 
-        { edad >= 18 ?
-            <p>Persona adulta</p> :    
-            <p>Niño</p>
-        }
+                { edad >= 18 ?
+                    <p>Persona adulta</p> :    
+                    <p>Niño</p>
+                }
     
 */
 
