@@ -93,6 +93,8 @@ function Restaurante() {
 
       {
         isInRoom &&
+
+
         <FormularioReserva
           onChangeInputCliente={(e) => { setNombreCliente(e.target.value) }}
           onSelectCapacidad={(e) => { setCapacidad(e.target.value) }}
@@ -100,6 +102,8 @@ function Restaurante() {
           onClickReservarMesa={onClickReservarMesa}
           onClickLiberarMesa={onClickLiberarMesa}
         ></FormularioReserva>
+
+        
       }
 
       <hr />

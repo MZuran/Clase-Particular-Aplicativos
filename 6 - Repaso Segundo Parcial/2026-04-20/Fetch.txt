@@ -1,0 +1,102 @@
+¿Cómo abrir el front?
+	1)	Abrís la carpeta front en vscode
+	2) 	Corrés "npm i" y después "npm run dev"
+
+¿Cómo abrir el back?
+	1)	Abrís la carpeta back en vscode (o en cmd)
+	2) 	Corrés "npm i" y después "npm run start"
+
+¿Qué es "Hacer un fetch"?
+
+Consiste en "ir a buscar información" de cierta dirección o URL.
+La información que nos brinda el backend puede tener 1 de 2 posibles formatos:
+
+	1)	Hyper Text Transfer Protocol
+		(HTTP)
+
+		Si el backend nos responde a nuestra petición fetch con un HTTP, básicamente nos está
+		mostrando una página web.
+
+		Por ejemplo, si yo hago un fetch de tipo GET a google.com
+
+	2)	Java Script Object Notation
+		(JSON)
+
+		Si el backend responde con JSON, nos está mostrando información "cruda" para utilizar en
+		nuestra aplicación. No se debe renderizar.
+
+		Por ejemplo, si yo hago un fetch de tipo GET a https://jsonplaceholder.typicode.com/posts
+
+	3)	No devuelve nada (En caso de error)
+
+¿Cuáles son los tipos de fetch?
+
+Se dice que tenemos varios "métodos" de hacer un fetch. Cada uno maneja información con un caso de uso
+distinto.
+
+	GET	-	Se utiliza cuando el usuario quiere pedir información "para leer".
+			Si utilizamos cualquier navegador de internet con un URL, estamos haciendo un GET.
+
+			Es el único método de fetch que NO tiene un body.
+
+
+	POST	-	Se utiliza cuando el usuario quiere enviar información al backend.
+			Generalmente, la información enviada por el usuario existe en un objeto llamado "body".
+
+
+	PUT	-	Se utiliza cuando el usuario quiere enviar información al backend con la intención
+			de que el backend modifique un dato existente en la base de datos.
+
+			La información requerida para la modificación del dato suele viajar en el body.
+
+
+	DELETE	-	Se utiliza cuando el usuario quiere enviar información al backend con la intención
+			de que el backend elimine un dato existente en la base de datos.
+
+
+Eventos que manejamos en el backend de ejemplo:
+
+
+	Eventos que recibe el Frontend:
+		pong()
+		newDisplayMessage({ message, user })
+
+	Eventos que recibe el Backend:
+		announcement( Objeto )
+		ping()
+		newMessage({ message, user })
+		joinRoom({room})
+
+El front tiene acceso a:
+	socket			-	Simboliza UN canal de comunicación cliente-servidor.
+
+El back tiene acceso a:
+	socket			-	Simboliza UN canal de comunicación cliente-servidor.
+
+	io			-	Simboliza TODOS los canales de comunicación cliente-servidor.
+
+	io.to(room)		-	Simboliza TODOS los canales de comunicación cliente-servidor que 
+					estén bajo la misma "room".
+
+
+¿Cómo meter nuevos elementos a un array que es una variable de estado?
+
+array.push(data)			-	No sirve si el array es una variable de estado
+setArray( prev => [data, ...prev] )	-	Usar esto si queremos meter el dato data
+
+
+
+{message: 'asdasd', user: 'asd', id: 14}
+
+
+
+
+
+
+
+
+
+
+
+
+
