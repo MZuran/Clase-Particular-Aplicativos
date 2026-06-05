@@ -1,0 +1,1 @@
+o:/(whenever|when|if).*token(s)?.*(enter|leave|is put into|create|would)/ -o:"sacrifice an token:" -o:"sacrifice a permanent:" -o:"as an additional cost" -o:"when ~ enters" -o:"when ~ leaves" -o:"when ~ is put into" -o:"for each token" -o:/if ~ (would|enters)/
