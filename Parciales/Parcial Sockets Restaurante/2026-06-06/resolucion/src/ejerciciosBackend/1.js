@@ -22,3 +22,4 @@ socket.on("join_restaurante", ({ alumnoId }) => {
 
  socket.emit("joined_OK_restaurante", { room: ROOM, restaurante: restauranteSalas[ROOM] })
 });
+
