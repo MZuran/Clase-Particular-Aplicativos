@@ -1,0 +1,70 @@
+Aplicaciones Nuevas
+1)  Node
+2)  Postman
+
+¿Qué es Node?
+Es un programa cuya función principal es interpretar y correr programas de JavaScript.
+La segunda función de Node es permitirnos utilizar "paquetes" de Node.
+
+¿Qué es un paquete de Node?
+Un paquete de Node es código creado por algún usuario y subido a una base de datos para
+que cualquier persona pueda descargarlo y utilizarlo en sus propios proyectos.
+
+Estructura de Backend
+La creación de un sistema backend CRUD
+Un sistema CRUD es un sistema capaz de 
+
+CREATE  -   Crear (y almacenar) información
+READ    -   Leer información
+UPDATE  -   Actualizar información
+DESTROY -   Borrar información
+
+El objeto APP
+    La plantilla base del backend es un programa que crea una instancia del objeto App para que nosotros
+    creemos una base de datos utilizando el objeto de distintas maneras.
+
+    Para crear nuestra base de datos tenemos que utilizar los distintos métodos del objeto APP.
+
+Protocolo de comunicación FETCH
+    Es un protocolo de comunicación entre dos computadoras en donde un "cliente" envía una
+    "petición" a un servidor y este mismo le devuelve una "respuesta"
+
+    Cliente -> Servidor (Viaja petición)    Peticion  = Request  = Req
+    Servidor -> Cliente (Viaja respuesta)   Respuesta = Response = Res
+    ----CONEXIÓN TERMINADA----
+
+Métodos del objeto APP para configurar FETCH a un URL
+    app.get()
+    app.post()
+    app.put()
+    app.delete()
+
+    Todas las peticiones que puede manejar un servidor están marcadas con
+    GET, POST, PUT y DELETE.
+
+    Muchos de estos métodos pueden ser funcionalmente idénticos pero utilizarlos
+    fuera de su caso de uso normal está considerado erróneo.
+
+    GET     -   Se utiliza cuando el cliente tiene la intención de "leer" un dato sin modificarlo
+
+                Siempre que navegamos a un URL en un navegador web, estamos haciendo un GET a esa URL
+                Es el único método que NO admite tener un body en la petición.
+
+    POST    -   Se utiliza cuando el cliente tiene la intención de "enviar" un dato al servidor.
+                Generalmente con la intención de que el servidor haga algo con ese dato.
+
+    PUT     -   Se utiliza cuando el cliente tiene la intención de "modificar" un dato almacenado
+                por del servidor.
+
+    DELETE  -   Se utiliza cuando el usuario tiene la intención de "eliminar" un dato almacenado
+                por el servidor. (El servidor no está realmente obligado a borrar nada)
+
+Función Asíncrona
+    Es una función que está preparada para "esperar" a que algo pase.
+
+Try/Catch:
+    Dentro de las funciones asíncronas, puede haber una infinita cantidad de errores
+    Por ejemplo errores de conexión, datos, etc
+    Normalmente el servidor entero se rompe cuando pasa un error de cualquier tipo
+    El Try/Catch previene el cierre del servidor en caso de falla
+    
