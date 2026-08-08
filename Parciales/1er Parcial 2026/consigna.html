@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen Parcial — JavaScript, Objetos y DOM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f5f7fa;
+      color: #212529;
+    }
+    .container {
+      max-width: 1000px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #198754, #146c43);
+      color: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .block {
+      background: white;
+      border-radius: 14px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 3px 12px rgba(0,0,0,.07);
+    }
+    .exercise {
+      border-left: 4px solid #198754;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+    pre {
+      background: #212529;
+      color: #f8f9fa;
+      border-radius: 10px;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    code {
+      color: #198754;
+    }
+    pre code {
+      color: inherit;
+    }
+    .important {
+      background: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    table {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container py-4">
+
+    <header class="hero">
+      <h1>Examen Parcial</h1>
+      <h2>JavaScript, Objetos y DOM</h2>
+      <p class="mb-1"><strong>Desarrollo de Aplicaciones Informáticas</strong></p>
+      <p class="mb-1">Curso: 5.º año — Informática</p>
+      <p class="mb-1">Duración: 2 horas cátedra (80 minutos)</p>
+      <p class="mb-0">Tema 1B — 06/07/2026</p>
+    </header>
+
+    <section class="block">
+      <h2 class="text-success">Consideraciones generales</h2>
+
+      <p>El examen consta de <strong>3 bloques independientes</strong>. Se puede comenzar por cualquiera de ellos.</p>
+
+      <div class="important">
+        <h5>Importante</h5>
+        <ul class="mb-0">
+          <li>Se entrega un archivo <code>index.html</code> base con Bootstrap ya incluido.</li>
+          <li>Crear y trabajar únicamente en el archivo <code>script.js</code>, que ya está importado en <code>index.html</code>.</li>
+          <li>La entrega debe realizarse en un archivo <code>.RAR</code> con el formato <code>5x_DAI_APELLIDO</code>.</li>
+        </ul>
+      </div>
+
+      <h4 class="mt-4">Restricción de métodos</h4>
+      <p>Está prohibido utilizar:</p>
+      <pre><code>find()
+filter()
+sort()
+findIndex()</code></pre>
+
+      <p>Toda búsqueda o recorrido deberá realizarse utilizando:</p>
+      <pre><code>for
+while
+forEach</code></pre>
+    </section>
+
+    <section class="block">
+      <h2 class="text-success">1. JavaScript puro</h2>
+
+      <div class="exercise">
+        <h3>Ejercicio 1.1 — Funciones de costo</h3>
+        <p>Crear las siguientes funciones:</p>
+
+        <h5><code>costoPorPeso(kg)</code></h5>
+        <p>Debe devolver:</p>
+        <pre><code>kg * 1500</code></pre>
+
+        <h5><code>costoPorDistancia(km)</code></h5>
+        <p>Debe devolver:</p>
+        <pre><code>km * 85.5</code></pre>
+
+        <h5><code>costoInternacional(pesos, cotizacion)</code></h5>
+        <p>Debe devolver:</p>
+        <pre><code>pesos / cotizacion</code></pre>
+      </div>
+
+      <div class="exercise">
+        <h3>Ejercicio 1.2 — Función <code>redondear</code></h3>
+
+        <p>Crear la función:</p>
+        <pre><code>redondear(numero, decimales)</code></pre>
+
+        <p>La función debe:</p>
+        <ol>
+          <li>Calcular el factor:
+            <pre><code>const factor = Math.pow(10, decimales);</code></pre>
+          </li>
+          <li>Devolver:
+            <pre><code>Math.round(numero * factor) / factor</code></pre>
+          </li>
+        </ol>
+
+        <h5>Pruebas</h5>
+        <p>Probar en la consola:</p>
+
+        <pre><code>redondear(costoPorPeso(2.5), 2)</code></pre>
+        <p>Debe dar <strong>3750</strong>.</p>
+
+        <pre><code>redondear(costoInternacional(10000, 1350), 3)</code></pre>
+        <p>Debe dar <strong>7.407</strong>.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="text-success">2. Clases</h2>
+
+      <div class="exercise">
+        <h3>Ejercicio 2.1 — Clase <code>Envio</code></h3>
+
+        <p>Crear la clase <code>Envio</code>. El constructor debe recibir:</p>
+
+        <table class="table table-bordered">
+          <thead class="table-success">
+            <tr>
+              <th>Atributo</th>
+              <th>Tipo / valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>id</code></td><td>number</td></tr>
+            <tr><td><code>tipo</code></td><td>string</td></tr>
+            <tr><td><code>valorOriginal</code></td><td>number</td></tr>
+            <tr><td><code>costo</code></td><td>number</td></tr>
+            <tr><td><code>fecha</code></td><td>string</td></tr>
+          </tbody>
+        </table>
+
+        <p>El atributo <code>tipo</code> puede ser:</p>
+        <pre><code>"peso"
+"distancia"
+"internacional"</code></pre>
+
+        <p>La fecha debe obtenerse mediante:</p>
+        <pre><code>new Date().toLocaleDateString()</code></pre>
+      </div>
+
+      <div class="exercise">
+        <h3>Ejercicio 2.2 — Clase <code>HistorialEnvios</code></h3>
+
+        <p>Crear la clase <code>HistorialEnvios</code>.</p>
+
+        <h5>Atributo <code>envios</code></h5>
+        <p>Debe inicializarse como un array vacío:</p>
+        <pre><code>[]</code></pre>
+
+        <h5>Método <code>agregar(envio)</code></h5>
+        <p>Debe recibir una instancia de <code>Envio</code> y agregarla al array <code>envios</code>.</p>
+
+        <h5>Método <code>obtenerPorTipo(tipo)</code></h5>
+        <ol>
+          <li>Recorrer <code>envios</code> utilizando un <code>for</code>.</li>
+          <li>Acumular en un array los envíos cuyo <code>tipo</code> coincida.</li>
+          <li>Devolver el array resultante.</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <h3>Ejercicio 2.3 — Datos de prueba</h3>
+
+        <p>Crear una instancia global:</p>
+        <pre><code>const historial = new HistorialEnvios();</code></pre>
+
+        <p>Agregar 3 envíos de prueba utilizando <code>historial.agregar()</code>.</p>
+
+        <h5>Envío 1</h5>
+        <pre><code>id: 1
+tipo: "peso"
+valorOriginal: 2.5
+costo: 3750</code></pre>
+
+        <h5>Envío 2</h5>
+        <pre><code>id: 2
+tipo: "distancia"
+valorOriginal: 12
+costo: 1026</code></pre>
+
+        <h5>Envío 3</h5>
+        <pre><code>id: 3
+tipo: "internacional"
+valorOriginal: 10000
+costo: 7.41</code></pre>
+
+        <p>Crear también:</p>
+        <pre><code>let nextId = 4;</code></pre>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="text-success">3. DOM</h2>
+
+      <div class="exercise">
+        <h3>Ejercicio 3.1 — Formulario de cotización</h3>
+
+        <p>Crear la función:</p>
+        <pre><code>cotizarEnvio()</code></pre>
+
+        <ol>
+          <li>
+            Obtener el tipo de envío desde:
+            <pre><code>&lt;select id="select-tipo"&gt;</code></pre>
+            Opciones: <code>"peso"</code>, <code>"distancia"</code>, <code>"internacional"</code>.
+          </li>
+
+          <li>
+            Obtener el valor desde:
+            <pre><code>&lt;input id="input-valor"&gt;</code></pre>
+            Convertirlo a <code>Number</code>.
+          </li>
+
+          <li>
+            Validar que el valor no sea <code>NaN</code> ni vacío.
+            Si no se cumple alguna condición, mostrar un <code>alert</code>.
+          </li>
+
+          <li>
+            Calcular el costo según el tipo:
+            <ul>
+              <li><code>"peso"</code> → <code>costoPorPeso(valor)</code></li>
+              <li><code>"distancia"</code> → <code>costoPorDistancia(valor)</code></li>
+              <li><code>"internacional"</code> → <code>costoInternacional(valor, 1350)</code></li>
+            </ul>
+          </li>
+
+          <li>Redondear el resultado utilizando <code>redondear(resultado, 2)</code>.</li>
+
+          <li>Crear un nuevo <code>Envio</code> utilizando <code>nextId</code> e incrementar <code>nextId</code>.</li>
+
+          <li>Llamar a <code>historial.agregar(envio)</code>.</li>
+
+          <li>Mostrar el resultado en el elemento con <code>id="resultado"</code>.</li>
+
+          <li>Llamar a <code>mostrarEnvios()</code> para actualizar la lista.</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <h3>Ejercicio 3.2 — Mostrar historial</h3>
+
+        <p>Crear la función:</p>
+        <pre><code>mostrarEnvios()</code></pre>
+
+        <ol>
+          <li>Seleccionar el elemento con <code>id="lista-historial"</code>.</li>
+
+          <li>Recorrer <code>historial.envios</code> utilizando un <code>for</code>.</li>
+
+          <li>
+            Por cada envío, mostrar:
+            <ul>
+              <li>tipo</li>
+              <li>valor original</li>
+              <li>costo</li>
+              <li>fecha</li>
+            </ul>
+            utilizando el formato:
+            <pre><code>${tipo} — ${valorOriginal} → $${costo} (${fecha})</code></pre>
+            e insertarlo dentro de una etiqueta <code>&lt;p&gt;</code>.
+          </li>
+
+          <li>Asignar el HTML generado al <code>innerHTML</code> del elemento.</li>
+        </ol>
+
+        <p>Al cargar la página, llamar a:</p>
+        <pre><code>mostrarEnvios()</code></pre>
+        <p>utilizando <code>window.onload</code>.</p>
+      </div>
+
+      <div class="exercise">
+        <h3>Ejercicio 3.3 — Limpiar historial</h3>
+
+        <p>Crear la función:</p>
+        <pre><code>limpiarEnvios()</code></pre>
+
+        <ol>
+          <li>Vaciar el array <code>historial.envios</code> asignándole <code>[]</code>.</li>
+          <li>Llamar a <code>mostrarEnvios()</code> para actualizar el DOM.</li>
+        </ol>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
