@@ -1,0 +1,44 @@
+- Crear un proyecto
+- Aprender a usar react
+- Crear un componente (Simple y Compuesto)
+- Crear un componente página
+
+Si queda tiempo:
+- onClick, onChange, etc
+- Mapear componentes
+
+No entra hoy:
+
+- Hook useState
+- Hook useEffect
+- Hook useRouter
+- Hook useSearchParams
+
+- Sockets
+- Fetch
+
+Cosas que necesitamos para react:
+- Node
+
+¿Cómo creamos un proyecto de react utilizando node y next?
+1) Abrir CMD en el directorio que querramos crear el proyecto
+2) corremos
+	npx create-next-app@latest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

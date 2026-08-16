@@ -1,0 +1,60 @@
+/.next
+	Contiene información del proyecto creado con next
+
+/node_modules
+	Contiene TODOS los paquetes instalados en el proyecto.
+	Como contiene todos los paquetes, generalmente es una
+	carpeta pesadísima. 
+
+	El proyecto sabe que paquetes necesita para funcionar.
+	No hace falta subir esta carpeta a un directorio o una
+	entrega por este motivo.
+
+	En caso de no tener esta carpeta o eliminarla, podemos
+	crearla de nuevo con los comandos:
+
+		npm i
+		npm install
+
+/public
+	Contiene los archivos multimedia que va a ver el 
+	usuario en el sitio.
+
+	Imágenes, videos, audios, fuentes tipográficas, etc
+
+/src
+	Contiene TODOS los archivos de código que vayamos a
+	escribir. Se divide en varias sub-carpetas.
+
+src/app
+	Contiene TODOS los componentes *página*
+
+	La estructura de la organización de sus archivos
+	y carpetas va a dictar las rutas de la aplicación.
+
+src/components
+	Contiene TODOS los componentes comunes
+
+src/utils
+	Contiene los archivos de código que no son componentes
+
+	Archivos con funciones, helpers, hooks, etc
+
+.gitignore
+	Es una lista de directorios para indicarle a git
+	que NO DEBERÍA SUBIR ESOS ARCHIVOS al repo.
+
+	Entre los más importantes se destacan
+	/node_modules y los archivos .env
+
+README.md
+	Es un readme para modificar el archivo de texto
+	que se muestra en el repo.
+
+package.json
+	JSON = JavaScriptObjectNotation
+	Contiene información IMPORTANTÍSIMA para el proyecto
+
+	Entre la información más importante se encuentran
+	1) Las dependencias 
+	2) Los scripts

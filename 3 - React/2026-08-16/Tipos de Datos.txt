@@ -1,0 +1,17 @@
+Podemos pensar un tipo de dato como todo lo que se puede guardar dentro de una variable
+
+const x = <p>hola</p>
+
+Lista de tipos de datos:
+	
+	-	Number
+	-	String		-	'' o "" o ´´
+	-	Booleanos	-	True o False
+	-	Objetos		-	{}		-	objeto.clave
+	-	Arrays		-	[]		-	array[posicion]
+	-	Funciones	-	() => {}	-	función(parámetro)
+
+	Tipos de datos añadidos por react:
+
+	-	Etiqueta HTML	-	<div></div>, <div/>
+	-	Componente
