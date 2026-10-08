@@ -1,0 +1,121 @@
+Conceptos clave:
+	socket		-	Es un canal de comunicación bilateral entre UN cliente y UN servidor.
+	io		-	Representa a TODOS los sockets (clientes) que están conectados a UN servidor.
+	io.to(ROOM)	-	Representa a TODOS los sockets (clientes) que están conectados a UN servidor y fueron asignados a una ROOM en particular.
+
+	socket.emit	-	Le emite un mensaje a UN cliente
+	io.emit		-	Le emite un mensaje a TODOS los clientes conectados
+	io.to("1")	-	Le emite un mensaje a TODOS los clientes conectados que pertenezcan a la sala "1"
+	socket.broadcast.emit	-	Le emite un mensaje a TODOS los clientes conectados EXCEPTO el socket que activó el evento
+
+	
+
+Concepto de evento:
+
+	Evento: Es una acción que se puede detectar. En respuesta podemos crear un callback que se ejecuta cuando se detecta un evento.
+		Le envía información relacionada al evento hacia el callback.
+		(Por ejemplo, click, change, etc)
+
+	Callback: Es la función que se ejecuta en respuesta al evento. Recibe información por parte del evento.
+
+
+Setup de backend para sockets:
+	1)	Asegurarse de haber instalado socket.io (npm install socket.io)
+
+	2)	En index.js crear la variable io pegando esto:
+
+		const io = require('socket.io')(server, {
+			cors: {
+				// IMPORTANTE: REVISAR PUERTO DEL FRONTEND
+				//origin: ['http://localhost:3000',"http://localhost:3001"],            	// Permitir el origen localhost:3000
+				origin: "*",
+				methods: ["GET", "POST", "PUT", "DELETE"],  	// Métodos permitidos
+				credentials: true                           	// Habilitar el envío de cookies
+			}
+		});
+
+	3)	Crear las conexiones con los clientes pegando esto:
+
+		io.on("connection", (socket) => {
+			const req = socket.request;
+			console.log("Cliente conectado")
+			// Acá ponemos nuestros socket.on o io.on
+		});
+
+Rooms/Salas:
+Si queremos usar rooms, metemos esto dentro del callback de io.on
+
+	// Asignar room predeterminada si no está en ninguna room
+	if (!req.session.room) {
+		req.session.room = "1"; 		// Room predeterminada
+		socket.join(req.session.room);	// Envía al socket a "1"
+	}
+	
+	// Este evento recibe un objeto cuyas claves DEBEN incluír room
+	// Por ejemplo { room: "1" }
+	socket.on('joinRoom', data => {
+
+		// socket.leave para salir de la room actual
+		if (req.session.room != undefined && req.session.room.length > 0) { socket.leave(req.session.room); }
+
+		req.session.room = data.room;
+		// Envía al socket a la room recibida por data.room
+		socket.join(req.session.room);
+
+		console.log("El socket ahora está en la room:", req.session.room)
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+1 gamemager = 1 instancia de juego
+
+class gameManager = {
+	
+	mazo: []
+	cartasp1: [],
+	cartasp2: [],
+	ptsp1
+	ptsp2
+	
+	estado: "libre" | "truco" | "retruco" | etc
+
+	truco() => {}	
+	aceptar() =>
+	bajarse() =>
+
+	repartir()
+}
+
+gameManager.truco(p1)
+gameManager.aceptar(p2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
