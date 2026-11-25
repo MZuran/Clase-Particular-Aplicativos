@@ -1,0 +1,14 @@
+node -v
+	Es un comando de node que nos dice la versión de node instalada.
+
+npx create-next-app@latest
+	Es un comando de node que nos permite (a través de next) crear un
+	proyecto de react.
+
+npm i
+npm install
+	Estos comandos son iguales. Crean la carpeta node_modules/
+
+npm run nombreScript
+	Este comando corre los scripts encontrados en package.json
+	En particular, nos importa el dev

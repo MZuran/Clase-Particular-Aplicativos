@@ -1,0 +1,70 @@
+.next/
+node_modules/
+
+	En todas las entregas, estas dos carpetas deben ser eliminadas.
+	Estas dos carpetas tienen información relacionada a los paquetes que instalamos
+	desde node.
+
+	Todas las descargas que hagamos se almacenan aquí dentro y terminan haciendo una carpeta
+	muy pesada.
+
+	Si el profesor quiere usar los paquetes de node, los puede descargar él mismo nuevamente.
+
+public/
+
+	Esta es la carpeta en donde almacenamos los archivos multimedia.
+	(Imágenes, videos, audios, fuentes tipográficas, logos, etc)
+
+src/
+
+	Esta es la carpeta en donde almacenamos TODOS nuestros archivos de código.
+	Tiene varias sub-carpetas que debemos saber utilizar.
+
+src/app/
+
+	En esta carpeta, vamos a almacenar nuestros componentes "tipo página"
+
+src/components/
+
+	En esta carpeta, vamos a almacenar nuestros componentes "comúnes"
+
+.gitignore
+
+	Es un archivo de texto en donde ponemos los nombres de los archivos o de las carpetas
+	que NO QUEREMOS que se suban a GitHub.
+
+package.json
+
+	Java-Script Object Notation
+	Notación de objetos de JavaScript
+
+	Es un archivo que tiene información relacionada al proyecto.
+	Se destacan 2 claves en particular:
+
+	scripts
+		Almacena "atajos" de comandos para correr con node.
+		Para correr uno de esos atajos, escribimos
+			npm run nombreAtajo
+			npm run dev
+			npm run build
+			npm run start
+			...
+	
+
+	dependencies
+		Almacena los nombres de todos los paquetes instalados de node en nuestro
+		proyecto.
+
+		Nuestro proyecto "depende" de estos paquetes, por lo
+		que los vamos a llamar "dependencias"
+
+		Los profes usan esta lista de dependencias para saber cuáles paquetes de node
+		deben instalar.
+
+		Para instalar automáticamente todos los paquetes de node que necesitemos
+		podemos usar el comando
+
+			npm i
+			npm install
+
+			(Estos comandos crean la carpeta /node_modules en caso de haberla borrado)

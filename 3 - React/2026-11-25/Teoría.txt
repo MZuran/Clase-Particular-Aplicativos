@@ -1,0 +1,11 @@
+Los Tipos de Datos:
+	String
+	Number
+	Bool
+	Array		-	[]
+	Objeto		-	{}
+	Funcion		-	() => {}
+
+React nos proporciona dos tipos de datos nuevos:
+	HTML		-	<></>, <div></div>, <p></p>
+	Componente	-	<PrimerComponente></PrimerComponente>, <Cartel></Cartel>
