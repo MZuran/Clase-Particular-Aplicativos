@@ -23,10 +23,15 @@ src/
 src/app/
 
 	En esta carpeta, vamos a almacenar nuestros componentes "tipo página"
+	Un "componente página" es un componente que se renderiza como su propia página web
 
 src/components/
 
 	En esta carpeta, vamos a almacenar nuestros componentes "comúnes"
+	Un "componente común" es un componente que es utilizado por los componentes
+	página.
+
+	Por ejemplo puede ser un botón, un link, un cartel, etc	
 
 .gitignore
 

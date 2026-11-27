@@ -1,0 +1,165 @@
+Hooks de React:
+
+¿Qué es un Hook?
+	Es una "función especial" que importamos desde algún paquete de node
+	que nos da acceso a nuevas características que antes no podíamos utilizar.
+
+¿A qué nos referimos con el estado?
+	El estado de un programa/aplicación es todo el conjunto de variables que lo
+	conforma. Podemos imaginarlo como la "memoria" de un programa.
+
+Tasa de Refresco de React
+	React es un framework o marco de trabajo que funciona haciendo que sus componentes
+	se estén constantemente "refrescando" para mostrar contenido que cambia.
+
+	Al momento de "refrescar" un componente, las nuevas variables o los cambios
+	a las variables existentes son eliminados. 
+	Un componente cambiante en react normalmente no puede retener memoria. 
+
+	Si queremos que los componentes tengan una "memoria interna", debemos
+	USAR ESTADO
+
+Hook useState:
+	Es un hook (o sea una función) que importamos desde "react" que nos permite
+	utilizar el estado (o la "memoria interna") de los componentes de react.
+
+	Nos permite crear un NUEVO TIPO DE VARIABLE llamado "variable de estado"
+	Una variable de estado es una variable que existe dentro del estado.
+
+	¿Qué sintaxis tiene?
+	
+	Cada vez que utilizamos el hook useState, estamos creando una nueva variable de estado
+	Su sintaxis es la siguiente:
+
+			const [nombreVariable,nombreSetter] = useState(valorInicial) 
+
+		por ejemplo:
+			const [contador,setContador] = useState(0)
+
+	¿Cómo usamos las variables de estado?
+
+	Las variables de estado son iguales a las variables comunes excepto por una
+	particularidad: NO admiten el uso del operador asignación =
+
+	En lugar del operador asinación, debemos usar la función SETTER definida al
+	lado de la variable de estado
+
+	La función setter sirve para "guardar cosas adentro" en lugar de la asignación
+	Todo lo que iría a la derecha del =, va adentro de la función setter
+
+Evento:
+	Un evento es algo que "podemos detectar"
+	Por ejemplo un click
+
+Efecto:
+	Es un callback que se ejecuta después de un evento
+	Es la "consecuencia" de detectar el evento
+
+React tiene un larguísimo número de eventos detectables a los cuales les podemos 
+asociar efectos (o callbacks). Sin embargo, muchas veces estos eventos no son 
+suficientes para lo que queremos hacer. Debemos encontrar una manera alternativa
+de USAR EFECTO
+
+Hook useEffect:
+	Es un hook que nos permite detectar cambios en el estado y asociar callbacks
+	en consecuencia.
+	
+	El hook useEffect SIEMPRE se debe importar desde "react"
+
+	Sintaxis del hook useEffect:
+		El hook es una función que recibe 2 parámetros;
+
+		1)	El efecto (el callback)
+		2)	El array de dependencias
+
+		useEffect(efecto, dependencias)
+		useEffect(() => {}, [])
+	
+	¿Cómo funciona el useEffect?
+
+	El useEffect SIEMPRE va a ejecutar el callback cuando se cumpla 1 de las
+	siguientes condiciones:
+
+	1)	La página carga por primera vez
+	2)	El valor de cualquier variable de estado dentro de las dependencias
+		cambia.
+
+	Si queremos que algo suceda UNA SÓLA VEZ, tenemos que usar useEffect
+	Si queremos "vigilar" el valor de una variable de estado, también usamos
+	useEffect
+
+¿Qué hace el Router?
+	Router viene de la palabra "enrutador"
+	Algo relacionado a las rutas
+	¿Qué es una ruta en un contexto de páginas web?
+	Una ruta no es ni más ni menos que el URL
+
+	Si queremos manipular el router, no podemos usar las herramientas nativas
+	de js. No vienen por default por lo que tendremos que utilizar un hook.
+
+Hook useRouter:
+	useRouter nos permite manipular el URL del usuario.
+
+	useRouter SIEMPRE se debe importar desde "next/navigation"
+	
+	¿Cuál es la sintaxis o el uso de useRouter?
+	El hook (función) simplemente nos crea un objeto llamado router
+
+	const router = useRouter()
+
+	El objeto router viene con varios métodos útiles
+	(Recordar que un método es una función almacenada dentro de un objeto)
+
+	router.push("URL")	-	Redirige al usuario a la url
+	router.back()		-	Envía al usuario a su página anterior
+	router.forward()	-	Envía al usuario a su página posterior
+
+
+
+
+
+
+https://www.google.com/search?q=banana
+https://www.google.com/search?q=manzana
+https://www.google.com/search?q=sandia
+
+En diseño web, la información presente en el url después del signo de pregunta
+se llama search params
+
+Los search params son similares a objetos con claves y valores separados por &
+
+?nombre=matias&apellido=zuran
+
+Hook useSearchParams:
+	Es un hook que nos permite leer los contenidos de los search params
+
+	Al igual que router, SIEMPRE se debe importar desde "next/navigation"
+	Y se usa de la siguiente manera:
+
+	const searchParams = useSearchParams()
+
+	El único método de el objeto searchParams que nos interesa es
+
+	searchParams.get("clave")
+	Devuelve el valor de la clave en el search params
+
+	Por ejemplo, si tenemos
+	(algún url)?nombre=matias
+
+	Entonces searchParams.get("nombre") devuelve "matias"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
